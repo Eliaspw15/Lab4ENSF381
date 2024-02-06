@@ -20,7 +20,7 @@ Description : Responsive Layouts.
 	<!-- First, link the menu.css file here -->
 
 	<style>	
-		/* Remove borders at the end, they have been add just for detecting positions of items*/	
+		/* Remove borders at the end, they have been add just for detecting positions of items	
 		div {
 			border: 1px dashed gray;	
 		}
@@ -35,52 +35,71 @@ Description : Responsive Layouts.
 		}
 		.small {
 			border: 1px solid yellow;	
-		}		
+		}		*/
 	</style>
 
     <style>
-		body { margin: 0; padding: 0;}
+		body { margin: 0; padding: 0; }
 		img { max-width: 100%; height: auto; }
-        .container { width: 100%;}
-        .header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; }        
-        .main { padding: 15px; margin-left: 150px;}		
-        .footer { position: fixed; bottom: 0; width: 100%;}
-        .news-item { padding: 10px; }
-		
+		.container { width: 100%; }
+		.header, .footer { background-color: #f2f2f2; text-align: center; padding: 10px; }
+		.main { padding: 15px; margin-left: 0; } 
+		.footer { position: relative; bottom: 0; width: 100%; }
+		.news-item { padding: 10px; }
+	
 		.row { 
-			/*I need some CSS codes.*/		
+			clear: both;
+			display: block;
 		}
-
+	
 		.large, .medium, .small {
-			/*I need some CSS codes.*/
+			float: left;
+			width: 100%; /* Default for mobile-first approach */
+			box-sizing: border-box; /* Include padding and border in the element's width */
 		}
-		
+	
 		.gap {
-			/*I need some CSS codes.*/
+			clear: both;
+			padding: 20px 0; /* Provide space at the bottom */
 		}
-
-		@media screen and (min-width: 769px) {			
-			.large { 
-				/*I need some CSS codes.*/
-			}
-			.medium { 
-				/*I need some CSS codes.*/
-			}
-			.small { 
-				/*I need some CSS codes.*/
-			 }
+	
+		@media screen and (min-width: 769px) {            
+			.large { width: 100%; }
+			.medium { width: 70%; }
+			.small { width: 30%; }
 		}
-
-        @media screen and (max-width: 768px) {
-            /*I need some CSS codes.*/
-        }
-
-        @media screen and (max-width: 480px) {
-			/*I need some CSS codes.*/
-        }
-
-        
-    </style>
+	
+		@media screen and (max-width: 768px) and (min-width: 481px) {
+			.menu ul {
+				display: block;
+			}
+			.menu ul li {
+				display: inline-block; /* Align menu items horizontally */
+				padding: 5px 10px; /* Adjust padding as necessary */
+			}
+			.large { width: 100%; }
+			.medium { width: 60%; }
+			.small { width: 40%; }
+		}
+	
+		@media screen and (max-width: 480px) {
+			.menu ul {
+				display: block;
+			}
+			.menu ul li {
+				display: block; /* Stack menu items vertically */
+				width: 100%; /* Ensure full width */
+				padding: 5px 0; /* Adjust padding as necessary */
+			}
+			.large, .medium, .small { width: 100%; }
+			.header h1, .news-item h1 { font-size: 18px; } /* Adjust font size for mobile */
+		}
+	
+		/* Remove borders for visual debugging before final submission */
+		div { border: none; }
+	</style>
+	
+	
 </head>
 <body>
     <div class="container">
@@ -135,7 +154,7 @@ Description : Responsive Layouts.
 				<!-- Medium news item -->
 				<div class="medium news-item">
 					<header>
-						<h1>Mahdi Ansari Takes a Historic Spacewalk Near the ISS</h1>
+						<h1>Moyo Takes a Historic Spacewalk Near the ISS</h1>
 					</header>
 					<img src="images/medium.jpg" alt="Medium Image">
 					<article>
@@ -160,3 +179,4 @@ Description : Responsive Layouts.
     </div>
 </body>
 </html>
+
