@@ -15,5 +15,5 @@ This project shows key web development skills including responsive web design, G
 ### Exercise B
 ![Exercise B final output](./ExerciseB.gif)
 
-### Exercise B
+### Exercise C
 ![Exercise C final output](./ExerciseC.gif)
